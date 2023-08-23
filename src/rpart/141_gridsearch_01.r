@@ -18,9 +18,11 @@ PARAM$semillas <- c(100019, 100057, 401231, 400009, 503143)
 #  que consiste en una particion estratificada segun agrupa
 # particionar( data=dataset, division=c(70,30), agrupa=clase_ternaria, seed=semilla)
 #   crea una particion 70, 30
-
-particionar <- function(data, division, agrupa = "", campo = "fold", start = 1, seed = NA) {
+particionar <- function(
+  data, division, agrupa = "",
+  campo = "fold", start = 1, seed = NA) {
   if (!is.na(seed)) set.seed(seed)
+  
 
   bloque <- unlist(mapply(function(x, y) {
     rep(y, x)
@@ -151,5 +153,3 @@ for (vcp in c(0.5, 1)) {
       vmin_split, "\t",
       ganancia_promedio, "\n"
     )
-  }
-}
