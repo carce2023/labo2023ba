@@ -113,15 +113,17 @@ archivo_salida <- "./exp/HT2020/gridsearch.txt"
 cat(
   file = archivo_salida,
   sep = "",
+  "cp","\t",
   "max_depth", "\t",
   "min_split", "\t",
+  "min_bucket", "\t",
   "ganancia_promedio", "\n"
 )
 
 
 # itero por los loops anidados para cada hiperparametro
 
-for (vcp in c(0.5, 1)) {
+for (vcp in c(-0.5, 1)) {
   for (vmax_depth in c(4, 6)) {
     for (vmin_split in c(1000, 800)) {
       for (vmin_bucket in c(2, 4)) {
@@ -134,21 +136,23 @@ for (vcp in c(0.5, 1)) {
 
 # vminsplit  minima cantidad de registros en un nodo para hacer el split
     param_basicos <- list(
-      "cp" = -0.5, # complejidad minima
+      "cp" = vcp, # complejidad minima
       "minsplit" = vmin_split,
-      "minbucket" = 5, # minima cantidad de registros en una hoja
+      "minbucket" = vmin_bucket, # minima cantidad de registros en una hoja
       "maxdepth" = vmax_depth
     ) # profundidad máxima del arbol
 
     # Un solo llamado, con la semilla 17
-    ganancia_promedio <- ArbolesMontecarlo(ksemillas, param_basicos)
+    ganancia_promedio <- ArbolesMontecarlo(PARAM$semillas, param_basicos)
 
     # escribo los resultados al archivo de salida
     cat(
       file = archivo_salida,
       append = TRUE,
       sep = "",
+      vcp, "\t", 
       vmax_depth, "\t",
       vmin_split, "\t",
+      vmin_bucket, "\t",
       ganancia_promedio, "\n"
     )}}}}
