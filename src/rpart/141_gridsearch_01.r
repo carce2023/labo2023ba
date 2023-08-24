@@ -23,7 +23,6 @@ particionar <- function(
   campo = "fold", start = 1, seed = NA) {
   if (!is.na(seed)) set.seed(seed)
   
-
   bloque <- unlist(mapply(function(x, y) {
     rep(y, x)
   }, division, seq(from = start, length.out = length(division))))
@@ -126,10 +125,10 @@ for (vcp in c(0.5, 1)) {
   for (vmax_depth in c(4, 6)) {
     for (vmin_split in c(1000, 800)) {
       for (vmin_bucket in c(2, 4)) {
-        }
-    }      
-  }          
-}
+        
+       
+          
+
 
 # notar como se agrega
 
@@ -152,4 +151,4 @@ for (vcp in c(0.5, 1)) {
       vmax_depth, "\t",
       vmin_split, "\t",
       ganancia_promedio, "\n"
-    )
+    )}}}}
