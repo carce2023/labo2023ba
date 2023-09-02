@@ -11,17 +11,17 @@ require("rpart")
 
 # parmatros experimento
 PARAM <- list()
-PARAM$experimento <- 3220
+PARAM$experimento <- 3217
 
-# Establezco la semilla aleatoria, cambiar por SU primer semilla
+# Establezco  la semilla aleatoria, cambiar por SU primer semilla
 PARAM$semilla <- 400009
 
 # parameetros rpart
 PARAM$rpart_param <- list(
   "cp" = -1,
-  "minsplit" = 300,
-  "minbucket" = 20,
-  "maxdepth" = 10
+  "minsplit" = 1000,
+  "minbucket" = 500,
+  "maxdepth" = 6
 )
 
 # parametros  arbol
@@ -118,3 +118,4 @@ for (arbolito in 1:PARAM$num_trees_max) {
     cat(arbolito, " ")
   }
 }
+
