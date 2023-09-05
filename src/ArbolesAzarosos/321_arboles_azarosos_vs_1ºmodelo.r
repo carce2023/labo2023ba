@@ -11,10 +11,10 @@ require("rpart")
 
 # parmatros experimento
 PARAM <- list()
-PARAM$experimento <- 3230
+PARAM$experimento <- 3231
 
 # Establezco la semilla aleatoria, cambiar por SU primer semilla
-PARAM$semilla <- 400009
+PARAM$semilla <- 100057
 
 # parameetros rpart
 PARAM$rpart_param <- list(
