@@ -132,7 +132,8 @@ setorder(tb_entrega, -prob)
 # deben subirse "inteligentemente" a Kaggle para no malgastar submits
 # si la palabra inteligentemente no le significa nada aun
 # suba TODOS los archivos a Kaggle
-# espera a la siguiente clase sincronica en donde el tema sera explicado
+# espera a la siguiente clase sincronica en donde el tema sera explicad
+# uso el corte optimo segun BO 13140
 
 cortes <- seq(13140, 14000, by = 500)
 for (envios in cortes) {

@@ -14,7 +14,7 @@ require("lightgbm")
 # defino los parametros de la corrida, en una lista, la variable global  PARAM
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
-PARAM$experimento <- "KA4245"
+PARAM$experimento <- "KA4248"
 
 PARAM$input$dataset <- "./datasets/dataset_pequeno.csv"
 PARAM$input$training <- c(202107) # meses donde se entrena el modelo
@@ -134,7 +134,7 @@ setorder(tb_entrega, -prob)
 # suba TODOS los archivos a Kaggle
 # espera a la siguiente clase sincronica en donde el tema sera explicado
 
-cortes <- seq(1000, 2500, by = 500)
+cortes <- seq(12500, 16000, by = 500)
 for (envios in cortes) {
   tb_entrega[, Predicted := 0L]
   tb_entrega[1:envios, Predicted := 1L]
