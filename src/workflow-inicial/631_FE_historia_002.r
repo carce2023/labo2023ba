@@ -21,9 +21,9 @@ PARAM$experimento <- "FE631_002"
 
 PARAM$exp_input <- "DR621_002"
 
-PARAM$lag1 <- FALSE
+PARAM$lag1 <- TRUE
 PARAM$lag2 <- TRUE
-PARAM$lag3 <- FALSE
+PARAM$lag3 <- TRUE
 
 PARAM$Tendencias1$run <- TRUE
 PARAM$Tendencias1$ventana <- 3
