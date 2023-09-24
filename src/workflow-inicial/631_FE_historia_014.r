@@ -22,11 +22,11 @@ PARAM$experimento <- "FE631_014"
 PARAM$exp_input <- "DR621_007"
 
 PARAM$lag1 <- TRUE
-PARAM$lag2 <- FALSE
+PARAM$lag2 <- TRUE
 PARAM$lag3 <- TRUE
 
 PARAM$Tendencias1$run <- TRUE
-PARAM$Tendencias1$ventana <- 3
+PARAM$Tendencias1$ventana <- 2
 PARAM$Tendencias1$tendencia <- TRUE
 PARAM$Tendencias1$minimo <- TRUE
 PARAM$Tendencias1$maximo <- TRUE
@@ -34,14 +34,14 @@ PARAM$Tendencias1$promedio <- TRUE
 PARAM$Tendencias1$ratioavg <- TRUE
 PARAM$Tendencias1$ratiomax <-TRUE
 
-PARAM$Tendencias2$run <- FALSE
-PARAM$Tendencias2$ventana <- 6
+PARAM$Tendencias2$run <- TRUE
+PARAM$Tendencias2$ventana <- 3
 PARAM$Tendencias2$tendencia <- TRUE
-PARAM$Tendencias2$minimo <- FALSE
-PARAM$Tendencias2$maximo <- FALSE
-PARAM$Tendencias2$promedio <- FALSE
-PARAM$Tendencias2$ratioavg <- FALSE
-PARAM$Tendencias2$ratiomax <- FALSE
+PARAM$Tendencias2$minimo <- TRUE
+PARAM$Tendencias2$maximo <- TRUE
+PARAM$Tendencias2$promedio <- TRUE
+PARAM$Tendencias2$ratioavg <- TRUE
+PARAM$Tendencias2$ratiomax <- TRUE
 
 
 PARAM$RandomForest$run <- TRUE
