@@ -6,7 +6,7 @@ options(error = function() {
   stop("exiting after script error")
 })
 
-
+#
 # corrida de cada paso del workflow
 
 # primeros pasos, relativamente rapidos
