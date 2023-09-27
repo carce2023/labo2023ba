@@ -26,7 +26,7 @@ PARAM$lag2 <- TRUE
 PARAM$lag3 <- TRUE
 
 PARAM$Tendencias1$run <- TRUE
-PARAM$Tendencias1$ventana <- 4
+PARAM$Tendencias1$ventana <- 2
 PARAM$Tendencias1$tendencia <- TRUE
 PARAM$Tendencias1$minimo <- TRUE
 PARAM$Tendencias1$maximo <- TRUE
@@ -35,7 +35,7 @@ PARAM$Tendencias1$ratioavg <- TRUE
 PARAM$Tendencias1$ratiomax <- TRUE
 
 PARAM$Tendencias2$run <- TRUE
-PARAM$Tendencias2$ventana <- 5
+PARAM$Tendencias2$ventana <- 4
 PARAM$Tendencias2$tendencia <- TRUE
 PARAM$Tendencias2$minimo <- TRUE
 PARAM$Tendencias2$maximo <- TRUE
