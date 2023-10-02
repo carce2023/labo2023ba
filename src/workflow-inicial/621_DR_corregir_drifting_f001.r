@@ -19,7 +19,8 @@ PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
 # valores posibles
 #  "ninguno", "rank_simple", "rank_cero_fijo", "deflacion", "estandarizar"
-PARAM$metodo <- "rank_cero_fijo"
+# En este caso dice deflación pero lo que haremos es dolarizar las variables
+PARAM$metodo <- "deflacion"
 
 PARAM$home <- "~/buckets/b1/"
 # FIN Parametros del script
@@ -167,8 +168,7 @@ AgregarVariables_IntraMes <- function(dataset) {
   }
 }
 #------------------------------------------------------------------------------
-# deflaciona por IPC
-# momento 1.0  31-dic-2020 a las 23:59
+# Ajusta por USD
 
 drift_deflacion <- function(campos_monetarios) {
   vfoto_mes <- c(
@@ -181,17 +181,17 @@ drift_deflacion <- function(campos_monetarios) {
   )
 
   vIPC <- c(
-    1.9903030878, 1.9174403544, 1.8296186587,
-    1.7728862972, 1.7212488323, 1.6776304408,
-    1.6431248196, 1.5814483345, 1.4947526791,
-    1.4484037589, 1.3913580777, 1.3404220402,
-    1.3154288912, 1.2921698342, 1.2472681797,
-    1.2300475145, 1.2118694724, 1.1881073259,
-    1.1693969743, 1.1375456949, 1.1065619600,
-    1.0681100000, 1.0370000000, 1.0000000000,
-    0.9680542110, 0.9344152616, 0.8882274350,
-    0.8532444140, 0.8251880213, 0.8003763543,
-    0.7763107219, 0.7566381305, 0.7289384687
+    0.0266556605, 0.0259694459, 0.0240922637,
+    0.0230206129, 0.0222933370, 0.0228440891,
+    0.0235304859, 0.0189786993, 0.0158197811,
+    0.0144917371, 0.0137751166, 0.0138012092,
+    0.0126599337, 0.0122712367, 0.0116463855,
+    0.0099376245, 0.0088380274, 0.0093657513,
+    0.0089214024, 0.0080367304, 0.0079163063,
+    0.0066650164, 0.0069044800, 0.0070734975,
+    0.0067956942, 0.0068508532, 0.0069440278,
+    0.0068297614, 0.0064089590, 0.0061971215,
+    0.0059495478, 0.0058491422, 0.0056942744
   )
 
   tb_IPC <- data.table(
@@ -242,7 +242,7 @@ drift_estandarizar <- function(campos_drift) {
   {
     cat(campo, " ")
     dataset[, paste0(campo, "_normal") := 
-      (get(campo) -mean(campo, na.rm=TRUE)) / sd(get(campo), na.rm=TRUE),
+      (get(campo) -mean(get(campo), na.rm=TRUE)) / sd(get(campo), na.rm=TRUE),
       by = foto_mes]
 
     dataset[, (campo) := NULL]
