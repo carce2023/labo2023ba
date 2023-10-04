@@ -7,7 +7,7 @@ options(error = function() {
 })
 
 
-# corrida de cada paso del workflow
+# corrida de cada paso del workflow.
 
 # primeros pasos, relativamente rapidos
 source("~/labo2023ba/src/workflow-inicial/661_ZZ_final_006f_10semillas.r")
