@@ -10,7 +10,7 @@ gc()             #garbage collection
 require("data.table")
 
 #Parametros del script
-kexp_input  <- "651_HT_lightgbm_006f"   #Aqui debe ir SU  bayesiana elegida
+kexp_input  <- "HT651_006f"   #Aqui debe ir SU  bayesiana elegida
 # FIN Parametros del script
 
 #------------------------------------------------------------------------------
